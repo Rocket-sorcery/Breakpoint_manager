@@ -26,7 +26,6 @@ object Server {
 
     fun stop() {
         server?.stop(0)
-        println("Server stopped.")
     }
 
     private class PageSender: HttpHandler {
@@ -59,7 +58,6 @@ object Server {
             val requestBody = exchange!!.requestBody.bufferedReader().readText()
             breakpointList.add(requestBody)
             pageUpdateFlag = true
-            println("new breakpoint received")
             counter++
             exchange.sendResponseHeaders(200, 0)
             exchange.responseBody.close()
@@ -70,7 +68,6 @@ object Server {
             val requestBody = exchange!!.requestBody.bufferedReader().readText()
             breakpointList.remove(requestBody)
             pageUpdateFlag = true
-            println("breakpoint removed")
             counter++
             exchange.sendResponseHeaders(200, 0)
             exchange.responseBody.close()
@@ -82,7 +79,6 @@ object Server {
             breakpointList.clear()
             breakpointList.addAll(requestBody.split('\n'))
             pageUpdateFlag = true
-            println("breakpoint list updated")
             exchange.sendResponseHeaders(200, 0)
             exchange.responseBody.close()
         }

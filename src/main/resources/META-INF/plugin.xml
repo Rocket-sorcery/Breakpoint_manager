@@ -25,6 +25,7 @@
        Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
   <applicationListeners>
     <listener class="org.example.breakpoint_manager.BreakpointListener" topic="com.intellij.xdebugger.breakpoints.XBreakpointListener"/>
+    <listener class="org.example.breakpoint_manager.ProjectShutdownListener" topic="com.intellij.openapi.project.ProjectCloseListener"/>
   </applicationListeners>
 
   <extensions defaultExtensionNs="com.intellij">

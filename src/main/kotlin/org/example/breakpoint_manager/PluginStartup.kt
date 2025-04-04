@@ -10,7 +10,7 @@ internal class PluginStartup: ProjectActivity, DumbAware {
     private val port = 8080
 
     override suspend fun execute(project: Project) {
-        project.messageBus.connect().subscribe(XBreakpointListener.TOPIC, BreakpointListener(port))
+        project.messageBus.connect().subscribe(XBreakpointListener.TOPIC, BreakpointListener())
         Server.start(port)
         Client.setPort(port)
         Client.start(project)

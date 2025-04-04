@@ -1,12 +1,11 @@
 package org.example.breakpoint_manager
 
-import com.intellij.util.concurrency.runAsCoroutine
 import com.intellij.xdebugger.breakpoints.XBreakpoint
 import com.intellij.xdebugger.breakpoints.XBreakpointListener
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.*
 
-class BreakpointListener(port: Int): XBreakpointListener<XBreakpoint<*>> {
+class BreakpointListener: XBreakpointListener<XBreakpoint<*>> {
     override fun breakpointAdded(breakpoint: XBreakpoint<*>) {
         super.breakpointAdded(breakpoint)
         launchAddBreakpoint(breakpoint)

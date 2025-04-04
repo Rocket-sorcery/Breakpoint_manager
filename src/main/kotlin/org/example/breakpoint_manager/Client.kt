@@ -80,7 +80,6 @@ object Client {
             headers.append("Content-Type", "text/plain")
             setBody(breakpointString.toByteArray())
         }
-        println(response)
         update()
     }
     suspend fun removeBreakpoint(breakpoint: XBreakpoint<*>) {
@@ -89,7 +88,6 @@ object Client {
             headers.append("Content-Type", "text/plain")
             setBody(breakpointString.toByteArray())
         }
-        println(response)
         update()
     }
     private suspend fun updateBreakpoints() {
@@ -99,7 +97,6 @@ object Client {
             headers.append("Content-Type", "text/plain")
             setBody(breakpointsString.toByteArray())
         }
-        println(response)
         update()
     }
 }
