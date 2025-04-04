@@ -44,7 +44,7 @@ object Server {
             <html>
             <body style="color:white">
                 <div style="width: 90%; border-radius: 5px; align-items: center;">
-                    <h2>Breakpoints</h2>
+                    <h2>Breakpoints: ${breakpointList.size}</h2>
                     <ul style="list-style:none">${breakpointList.joinToString("") { "<li>$it</li>" }}</ul>
                 </div>
             </body>
