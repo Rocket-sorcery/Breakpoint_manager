@@ -25,8 +25,6 @@ object Client {
     private var toolWindow: ToolWindow? = null
     private var port: Int = -1
     private var url = ""
-//    @Suppress("removal")                    // Idea suggests using an overload of create accepting JBCefBrowserBase, which is
-//    private val query = JBCefJSQuery.create(browser)// an abstract superclass of JBCefBrowser. Not sure what else to do here, honestly
 
     fun setPort(port: Int) {
         if (port == -1) {
